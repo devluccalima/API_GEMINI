@@ -17,5 +17,5 @@ app.use(rootRoute);
 app.use(templateRoute);
 
 
-export default app;
+export {app};
 

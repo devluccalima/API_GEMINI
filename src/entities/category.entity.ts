@@ -54,3 +54,5 @@ export class Category {
     return this.templates.find((t: Template) => template.getId() === t.getId());
   }
 }
+
+export {Category as CategoryEntity};
