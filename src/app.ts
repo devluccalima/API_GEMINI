@@ -1,4 +1,5 @@
 import express from "express";
+import categoryRoute from "./controllers/category.controller";
 import chatRoute from "./controllers/chat.controller";
 import rootRoute from "./controllers/root.controller";
 import templateRoute from "./controllers/template.controller";
@@ -10,13 +11,11 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(categoryRoute)
 app.use(chatRoute);
 app.use(rootRoute);
 app.use(templateRoute);
 
-app.get("/", (_req, res) => {
-  res.send("Servidor está Online!");
-});
 
-export { app };
+export default app;
 

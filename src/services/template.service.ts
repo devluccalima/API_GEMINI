@@ -27,7 +27,7 @@ const getTemplateById = (id: string): Template => {
   const template = findTemplateById(id);
 
   if (!template) {
-    throw new NotFoundException(`Template com o id${id} não encontrado.`);
+    throw new NotFoundException(`Template with id ${id} not found`);
   }
 
   return template;
@@ -40,7 +40,7 @@ const updateTemplate = (
   const template = getTemplateById(id);
 
   if (!template) {
-    throw new NotFoundException(`Template com o id${id} não encontrado.`);
+    throw new NotFoundException(`Template with id ${id} not found`);
   }
 
   template.setTitle(title);
@@ -53,7 +53,7 @@ const deleteTemplate = (id: string): void => {
   const template = getTemplateById(id);
 
   if (!template) {
-    throw new NotFoundException(`Template com o id${id} não encontrado.`);
+    throw new NotFoundException(`Template with id ${id} not found`);
   }
 
   removeTemplate(id);

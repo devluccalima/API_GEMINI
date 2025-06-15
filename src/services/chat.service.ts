@@ -1,9 +1,18 @@
+
 import { model } from "../third-party/gemini";
 
-const chat = async (prompt:string) => {
-  const result = await model.generateContent(prompt);
+const chat = async (prompt: string): Promise<string> => {
+  const result = await model.generateContent({
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }]
+      }
+    ]
+  });
   const response = await result.response;
-  const text = await response.text();
+  const text = response.text();
+  return text;
 };
 
 export { chat };
