@@ -1,4 +1,3 @@
-
 import { model } from "../third-party/gemini";
 
 const chat = async (prompt: string): Promise<string> => {
@@ -10,8 +9,7 @@ const chat = async (prompt: string): Promise<string> => {
       }
     ]
   });
-  const response = await result.response;
-  const text = response.text();
+  const text = result.response.text();
   return text;
 };
 

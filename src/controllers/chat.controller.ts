@@ -1,14 +1,15 @@
-import express, { Request, Response } from "express";
+import express, {Router, Request, Response } from "express";
 import { chat } from "../services/chat.service";
 
-const router = express.Router();
+const router: Router = express.Router();
 
 const handleChat = async (req: Request, res: Response) => {
   try {
     const { prompt } = req.body;
 
     if (!prompt) {
-      return res.status(400).json({ error: "Prompt é obrigatório" });
+      res.status(400).json({ error: "Prompt é obrigatório" });
+      return;
     }
 
     const response = await chat(prompt);

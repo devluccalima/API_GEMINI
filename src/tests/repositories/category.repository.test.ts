@@ -6,7 +6,7 @@ import {
   findCategoryById,
   saveCategory,
   removeCategory
-} from "../repositories/category.repository";
+} from "../../repositories/category.repository";
 
 import { Category } from "../../entities/category.entity";
 

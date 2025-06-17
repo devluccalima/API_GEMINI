@@ -3,7 +3,9 @@
     "@google/genai": "^1.5.1",
     "@google/generative-ai": "^0.24.1",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",

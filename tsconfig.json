@@ -9,6 +9,6 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist"
   },
-  "include": ["src", "src/tests/repositories/services"],
+  "include": ["src", "src/tests/repositories/services", "tsconfig.json", "jest.config.js"],
   "exclude": ["node_modules"]
 }
