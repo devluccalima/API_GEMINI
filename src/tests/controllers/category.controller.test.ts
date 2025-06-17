@@ -1,6 +1,6 @@
 import supertest from "supertest";
 import { validate } from "uuid";
-import  {app} from "./../../app";
+import { app } from "../../app";
 
 describe("Testando rotas de categories", () => {
   test("deve retornar uma lista vazia quando nenhuma categoria foi cadastrada", async () => {

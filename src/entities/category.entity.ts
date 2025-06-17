@@ -26,6 +26,14 @@ export class Category {
     }
   }
 
+  removeTemplate(template: Template) {
+    if (this.findByTemplate(template)) {
+      const newTemplates = this.getTemplates().filter(tem => tem.getId() !== template.getId());
+      this.setTemplates(newTemplates);
+      template.removeCategory(this);
+    }
+  }
+
   getId(): string {
     return this.id;
   }
@@ -50,9 +58,11 @@ export class Category {
     this.description = description;
   }
 
+  setTemplates (templates: Template[]) {
+    this.templates = templates;
+  }
+
   private findByTemplate (template: Template) {
     return this.templates.find((t: Template) => template.getId() === t.getId());
   }
 }
-
-export {Category as CategoryEntity};

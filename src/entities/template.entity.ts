@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import {Category} from "./category.entity"
+import { Category } from "./category.entity"
 
 export class Template {
   private id: string;
@@ -7,7 +7,7 @@ export class Template {
   private content: string;
   private categories: Category[];
 
-  private constructor(id: string, title: string, content: string, categories: Category[] = []) {
+  constructor(id: string, title: string, content: string, categories: Category[] = []) {
     this.id = id;
     this.title = title;
     this.content = content;
@@ -23,6 +23,14 @@ export class Template {
     if (!this.findByCategory(category)) {
       this.categories.push(category);
       category.addTemplate(this);
+    }
+  }
+
+  removeCategory(category: Category) {
+    if (this.findByCategory(category)) {
+      const newCategories = this.getCategories().filter(cat => cat.getId() !== category.getId());
+      this.setCategories(newCategories);
+      category.removeTemplate(this);
     }
   }
 
@@ -48,6 +56,10 @@ export class Template {
 
   setContent (content: string) {
     this.content = content;
+  }
+
+  setCategories (categories: Category[]) {
+    this.categories = categories;
   }
 
   private findByCategory (category: Category) {
