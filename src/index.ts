@@ -4,5 +4,6 @@ const port = 3000;
 
 app.listen(port, () => {
   console.log(`Server Online em http://localhost:${port}`);
+  console.log(`Acesse a documentação em http://localhost:${port}/api-docs`);
 });
 
